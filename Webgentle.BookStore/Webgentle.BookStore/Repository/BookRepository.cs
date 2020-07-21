@@ -27,11 +27,12 @@ namespace Webgentle.BookStore.Repository
             {
                 return new List<BookModel>()
                 {
-                    new BookModel() { Id = 1, Title = "MVC", Author = "Mohatma" },
-                    new BookModel() { Id = 2, Title = "JavaBook", Author = "Ratul" },
-                    new BookModel() { Id = 3, Title = "Python", Author = "Imran" },
-                    new BookModel() { Id = 4, Title = "Angular", Author = "Faizal" },
-                    new BookModel() { Id = 5, Title = "React", Author = "Adilet" }
+                    new BookModel() { Id = 1, Title = "Asp.Net MVC", Author = "Mohatma", Description="This is about Asp.Net MVC prgramming book", Category="Advance Programming", Language="English", TotalPage=227 },
+                    new BookModel() { Id = 2, Title = "JavaBook", Author = "Ratul", Description="This is about Java prgramming book, useful for java developer", Category="Programming", Language="English", TotalPage=297},
+                    new BookModel() { Id = 3, Title = "Python", Author = "Imran", Description="This is about Python prgramming book, useful for pythor developer", Category="Basic Programming", Language="English", TotalPage=305},
+                    new BookModel() { Id = 4, Title = "Angular", Author = "Faizal", Description="This is about Angular Front End design, useful for client side programming", Category="Typescript", Language="English", TotalPage=335},
+                    new BookModel() { Id = 5, Title = "React", Author = "Adilet", Description="This is about Reach javascript for professional client side programming", Category="Framework", Language="English", TotalPage=187},
+                    new BookModel() { Id = 6, Title = "AzureDev", Author = "Afrodite", Description="This is about Azure Developement book, for professional leve", Category="Framework", Language="English", TotalPage=288}
                 };
 
             }
