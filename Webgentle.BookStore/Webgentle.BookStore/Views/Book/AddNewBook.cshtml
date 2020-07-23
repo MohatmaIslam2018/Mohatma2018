@@ -1,0 +1,59 @@
+﻿@using Webgentle.BookStore.Enums
+@model BookModel
+@{
+    ViewData["Title"] = "Add New Book";
+}
+
+<div class="container">
+    <h3 class="display-4">Add new book</h3>
+    <hr />
+
+    @if (ViewBag.IsSuccess == true)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Congratulation!</strong> New Book has been added successfully. <br />
+            Click <a asp-controller="Book" asp-action="GetBook" asp-route-id="@ViewBag.BookId">here</a>  to view book detail
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+
+
+    <form method="post">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="LanguageEnum"></label>
+            <select asp-for="LanguageEnum" class="form-control" asp-items="Html.GetEnumSelectList<LanguageEnum>()">
+                <option value="">Please select your language</option>
+            </select>
+            <span asp-validation-for="LanguageEnum" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Author"></label>
+            <input asp-for="Author" class="form-control" />
+            <span asp-validation-for="Author" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label asp-for="TotalPage"></label>
+            <input asp-for="TotalPage" class="form-control" />
+            <span asp-validation-for="TotalPage" class="text-danger"></span>
+
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Add book" />
+        </div>
+    </form>
+</div>
