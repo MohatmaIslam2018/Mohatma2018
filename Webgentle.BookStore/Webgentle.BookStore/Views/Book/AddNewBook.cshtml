@@ -20,40 +20,67 @@
     }
 
 
-    <form method="post">
+<form method="post" enctype="multipart/form-data" asp-action="AddNewbook" asp-controller="Book">
 
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="form-group">
-            <label asp-for="LanguageEnum"></label>
-            <select asp-for="LanguageEnum" class="form-control" asp-items="Html.GetEnumSelectList<LanguageEnum>()">
-                <option value="">Please select your language</option>
-            </select>
-            <span asp-validation-for="LanguageEnum" class="text-danger"></span>
-        </div>
+    <div class="form-group">
+        <label asp-for="LanguageId"></label>
+        <select asp-for="LanguageId" class="form-control" asp-items="ViewBag.Language">
+            <option value="">Please select your language</option>
+        </select>
+        <span asp-validation-for="LanguageId" class="text-danger"></span>
+    </div>
 
-        <div class="form-group">
-            <label asp-for="Title"></label>
-            <input asp-for="Title" class="form-control" />
-            <span asp-validation-for="Title" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Author"></label>
-            <input asp-for="Author" class="form-control" />
-            <span asp-validation-for="Author" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Description"></label>
-            <textarea asp-for="Description" class="form-control"></textarea>
-        </div>
-        <div class="form-group">
-            <label asp-for="TotalPage"></label>
-            <input asp-for="TotalPage" class="form-control" />
-            <span asp-validation-for="TotalPage" class="text-danger"></span>
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Author"></label>
+        <input asp-for="Author" class="form-control" />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="TotalPage"></label>
+        <input asp-for="TotalPage" class="form-control" />
+        <span asp-validation-for="TotalPage" class="text-danger"></span>
+    </div>
 
+    <div class="form-group">
+        <label asp-for="CoverPhoto" class="control-label"></label>
+        <div class="custom-file">
+            <input asp-for="CoverPhoto" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Choose file</label>
         </div>
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Add book" />
+        <span asp-validation-for="CoverPhoto" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GalleryFiles" class="control-label"></label>
+        <div class="custom-file">
+            <input asp-for="GalleryFiles" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Choose file</label>
         </div>
-    </form>
+        <span asp-validation-for="GalleryFiles" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BookPdf" class="control-label"></label>
+        <div class="custom-file">
+            <input asp-for="BookPdf" class="custom-file-input" id="customFile">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+        </div>
+        <span asp-validation-for="BookPdf" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Add book" />
+    </div>
+</form>
 </div>
